@@ -43,8 +43,8 @@ EOF
 
 data "archive_file" "lambda_handler" {
   type        = "zip"
-  source_file = "${path.module}/lambdafunction/lambda_handler.py"
-  output_path = "${path.module}/lambdafunction/lambda_handler.zip"
+  source_file = "./lambdafunction/lambda_handler.py"
+  output_path = "/lambdafunction/lambda_handler.zip"
 }
 
 resource "aws_lambda_function" "lambda_function" {
