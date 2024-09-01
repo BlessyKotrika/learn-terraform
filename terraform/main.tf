@@ -1,5 +1,7 @@
 provider "aws" {
   region = "us-east-2"  # Change to your preferred region
+  access_key = "${var.my_aws_access_key}
+  secret_key = "${var.my_aws_access_secret}
 }
 
 # Create an S3 bucket
