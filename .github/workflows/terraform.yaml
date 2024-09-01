@@ -12,13 +12,25 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: change directory 
-      run: ls
+    - name: Echo
+      run: echo Be Patient
 
-    - name: cd
-      run: ls 
+    - name: Setup_Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 0.14.7
+
+    - name: Terraform_Init
+      run: terraform init
       working-directory: ./terraform
-    
-    - name: LS 
-      run: ls
-      working-directory: ./lambdafunction
+
+    - name: Terraform Plan
+      run: terraform plan
+      working-directory: ./terraform
+
+    - name: Terraform_Apply
+      run: terraform apply -auto-approve
+      env:
+        TF_VAR_my_aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        TF_VAR_my_aws_access_secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      working-directory: ./terraform
