@@ -4,8 +4,8 @@ on:
       - main
 
 jobs:
-  run terraform script:
-    name: run_terraform_script
+  run_terraform_script:
+    name: run terraform script
     runs-on: ubuntu-latest
 
     steps:
@@ -14,7 +14,7 @@ jobs:
 
     - name: echo 
       run: echo hi blessy please be patient
-      working-directory: ./
+      working-directory: ./terraform
 
     - name: Setup_Terraform
       uses: hashicorp/setup-terraform@v1
