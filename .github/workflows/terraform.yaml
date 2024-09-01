@@ -5,7 +5,7 @@ on:
 
 jobs:
   run terraform script:
-    name: run terraform script
+    name: run_terraform_script
     runs-on: ubuntu-latest
 
     steps:
@@ -14,17 +14,17 @@ jobs:
 
     - name: echo 
       run: echo hi blessy please be patient
-      working-directory: ./lambda
+      working-directory: ./
 
-    - name: Setup Terraform
+    - name: Setup_Terraform
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 0.14.7
 
-    - name: Terraform Init
+    - name: Terraform_Init
       run: terraform init
 
-    - name: Terraform Apply
+    - name: Terraform_Apply
       run: terraform apply -auto-approve
       env:
         TF_VAR_my_aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
