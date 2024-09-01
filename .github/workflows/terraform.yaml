@@ -16,7 +16,9 @@ jobs:
       run: ls
 
     - name: cd
-      run: cd  ./terraform
+      run: ls 
+      working-directory: ./terraform
     
     - name: LS 
       run: ls
+      working-directory: ./lambdafunction
