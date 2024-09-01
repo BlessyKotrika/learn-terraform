@@ -15,8 +15,8 @@ jobs:
     - name: change directory 
       run: ls
 
-    - name: pwd
-      run: pwd
+    - name: cd
+      run: cd  ./terraform
     
     - name: LS 
       run: ls
