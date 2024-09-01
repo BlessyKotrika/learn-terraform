@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: change directory 
-      run: cd terraform
+      run: cd ${GITHUB_WORKSPACE}/terraform
 
     - name: change directory 
       run: pwd
