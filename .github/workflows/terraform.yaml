@@ -1,5 +1,3 @@
-name Create:-Lambda-Function
-
 on:
  push :
     branches:
