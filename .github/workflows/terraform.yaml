@@ -12,9 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: echo 
-      run: echo hi blessy please be patient
-      working-directory: ./terraform
+    - name: change directory 
+      run: cd terraform
+
+    - name: change directory 
+      run: pwd
 
     - name: Setup_Terraform
       uses: hashicorp/setup-terraform@v1
@@ -26,7 +28,7 @@ jobs:
 
     - name: Terraform Plan
       run: terraform plan
-      
+
     - name: Terraform_Apply
       run: terraform apply -auto-approve
       env:
